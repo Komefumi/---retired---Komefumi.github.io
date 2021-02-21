@@ -84,7 +84,7 @@ function SectionPortal() {
 
 function DetailPanel() {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <DetailPanelWrapper>
         <DetailNav>
           <DetailNavUl>
