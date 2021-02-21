@@ -5,6 +5,7 @@ import {
   Switch,
   Route,
 } from 'react-router-dom';
+import FadeIn from 'react-fade-in';
 import styled from 'styled-components';
 
 import BasicInfo from './Details/BasicInfo';
@@ -19,61 +20,20 @@ const listReset = `
   padding: 0;
 `;
 
-const SeperationUl = styled.ul`
-  display: flex;
-  ${listReset}
-  flex: 0 1 auto;
-  height: 0.2em;
-  background-color: #bd83d9;
-  justify-content: center;
-
-  & > li {
-    content: "";
-    border-right: 0.5px solid #ba23ed;
-    max-width: 100%;
-    min-width: 50px;
-  }
-
-  & > li:last-child {
-    border-right none;
-  }
-`;
-
-function SeperationRule() {
-  return (
-    <SeperationUl>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-    </SeperationUl>
-  );
-}
-
 const DetailNav = styled.nav`
-  // min-width: 25%;
   min-width: 112px;
 `;
 const DetailNavUl = styled.ul`
   ${listReset}
-  font-weight: bold;
-  font-size: 0.75em;
+  font-size: 0.9em;
   max-width: 20vw;
   line-height: 1.5;
 `;
 const DetailNavLi = styled.li`
-  // padding: 0.5em;
-  // width: 100%;
   display: flex;
   justify-content: center;
   border: 1px solid #6e4ca5;
+  width: 100px;
 `;
 
 const DetailPanelWrapper = styled.section`
@@ -84,9 +44,7 @@ const DetailPanelWrapper = styled.section`
   border: 5px solid #d8cde5;
   border-radius: 0.5em;
   display: flex;
-  // padding: 0.5em;
   width: 80vw;
-  // flex: 1 1 auto;
 `;
 
 const Link = styled(NavLink)`
@@ -102,26 +60,24 @@ const Link = styled(NavLink)`
   }
 `;
 
-
-
 function SectionPortal() {
   return (
     <Switch>
-      <Route path='/' exact>
-        <BasicInfo />
-      </Route>
-      <Route path='/present-skillset' exact>
-        <MyPresentSkillset />
-      </Route>
-      <Route path='/what-im-working-towards' exact>
-        <WorkingTowards />
-      </Route>
-      <Route path='/educational-qualifications' exact>
-        <EducationalQualifications />
-      </Route>
-      <Route path='/contact-information' exact>
-        <ContactInformation />
-      </Route>
+        <Route path='/' exact>
+          <BasicInfo />
+        </Route>
+        <Route path='/present-skillset' exact>
+          <MyPresentSkillset />
+        </Route>
+        <Route path='/what-im-working-towards' exact>
+          <WorkingTowards />
+        </Route>
+        <Route path='/educational-qualifications' exact>
+          <EducationalQualifications />
+        </Route>
+        <Route path='/contact-information' exact>
+          <ContactInformation />
+        </Route>
     </Switch>
   );
 }
@@ -133,10 +89,14 @@ function DetailPanel() {
         <DetailNav>
           <DetailNavUl>
             <DetailNavLi>
-              <Link to='/'><span>Basic Info about me</span></Link>
+              <Link to='/'>
+                <span>Basic Info about me</span>
+              </Link>
             </DetailNavLi>
             <DetailNavLi>
-              <Link to='/present-skillset'><span>My present skill set</span></Link>
+              <Link to='/present-skillset'>
+                <span>My present skill set</span>
+              </Link>
             </DetailNavLi>
             <DetailNavLi>
               <Link to='/what-im-working-towards'>
@@ -149,7 +109,9 @@ function DetailPanel() {
               </Link>
             </DetailNavLi>
             <DetailNavLi>
-              <Link to='/contact-information'><span>Contact Information</span></Link>
+              <Link to='/contact-information'>
+                <span>Contact Information</span>
+              </Link>
             </DetailNavLi>
           </DetailNavUl>
         </DetailNav>
@@ -162,13 +124,11 @@ function DetailPanel() {
 const DetailSectionHolder = styled.main`
   display: flex;
   justify-content: center;
-  // justify-items: center;
 `;
 
 function DetailSection() {
   return (
     <DetailSectionHolder>
-      {/* <SeperationRule /> */}
       <DetailPanel />
     </DetailSectionHolder>
   );

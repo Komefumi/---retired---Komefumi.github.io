@@ -15,12 +15,8 @@ const LocalWrapper = styled(Wrapper)`
 `;
 
 const Overlay = styled.div`
-  // background-color: rgba(168, 116, 191, 100%);
-  // background-image: linear-gradient(#683f75, #9e88a6);
   background-image: url(${BannerRectangle});
   background-size: 400px 400px;
-  // background: url(${BannerRectangle}) no-repeat center center fixed;
-  // background-position: 100% 100%;
   background-size: 100% 100%;
   overflow: show;
   opacity: 1;
@@ -30,7 +26,6 @@ const Overlay = styled.div`
   color: #efefef;
   max-width: 800px;
   display: flex;
-  // font-weight: 0;
   line-height: 1.5;
   font-size: 1em;
   min-height: 40vh;
@@ -47,11 +42,11 @@ const cat = `&:after {
 }`
 
 const ProfilePicture = styled.img`
-  width: 150px;
-  // height: auto;
+  max-width: 100px;
+  margin-top: 2em;
   border: 5px solid #d8cde5;
   border-radius: 0.5em;
-  align-self: center;
+  align-self: flex-start;
 `;
 
 const Content = styled.div`
@@ -60,6 +55,8 @@ const Content = styled.div`
 `;
 
 function Banner() {
+  const justMy = "Just my profile picture on Github";
+  const linkToJustMy = "https://avatars.githubusercontent.com/u/76627194?s=460&v=4";
   return (
     <LocalWrapper>
       <Overlay>
@@ -78,7 +75,7 @@ function Banner() {
 
           You can read more about me below. */}
         </Content>
-        <ProfilePicture src="https://avatars.githubusercontent.com/u/76627194?s=460&v=4" />
+        <ProfilePicture alt={justMy} title={justMy} src={linkToJustMy} />
       </Overlay>
     </LocalWrapper>
   );

@@ -1,21 +1,23 @@
 import React from 'react';
 import styled from 'styled-components';
+import FadeIn from 'react-fade-in';
 
 const WriterPad = styled.section`
-  line-height: 1;
+  line-height: 1.5;
   padding: 1em;
   font-size: 1em;
-  // max-width: 50%;
-  // overflow-x: hidden;
   overflow-y: auto;
-  // max-height: 20px;
+  max-height: 400px;
   position: relative;
-  // padding-right: 3.1em;
-  // display: flex;
+  color: #efefef;
   flex: 1 1 100%;
 
   scrollbar-width: auto;
   scrollbar-color: #1c0c37 #3e1e70;
+
+  & > p {
+    margin-bottom: 2em;
+  }
 
   &::-webkit-scrollbar {
     width: 12px; /* width of the entire scrollbar */
@@ -39,10 +41,12 @@ const TitleElem = styled.h4`
 
 function DetailWriter({ title, children }) {
   return (
-    <WriterPad>
-      <TitleElem>{title}</TitleElem>
-      {children}
-    </WriterPad>
+    <FadeIn>
+      <WriterPad>
+        <TitleElem>{title}</TitleElem>
+        {children}
+      </WriterPad>
+    </FadeIn>
   );
 }
 
