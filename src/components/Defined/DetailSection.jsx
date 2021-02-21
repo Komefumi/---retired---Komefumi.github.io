@@ -1,6 +1,7 @@
 import React from 'react';
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
+  // BrowserRouter as Router,
   NavLink,
   Switch,
   Route,
@@ -84,7 +85,7 @@ function SectionPortal() {
 
 function DetailPanel() {
   return (
-    <Router basename={process.env.PUBLIC_URL}>
+    <Router>
       <DetailPanelWrapper>
         <DetailNav>
           <DetailNavUl>
