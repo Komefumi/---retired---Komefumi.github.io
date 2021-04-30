@@ -1,19 +1,11 @@
-import React from 'react';
-import {
-  HashRouter as Router,
-  // BrowserRouter as Router,
-  NavLink,
-  Switch,
-  Route,
-} from 'react-router-dom';
-import FadeIn from 'react-fade-in';
-import styled from 'styled-components';
+import { HashRouter as Router, NavLink, Switch, Route } from "react-router-dom";
+import styled from "styled-components";
 
-import BasicInfo from './Details/BasicInfo';
-import MyPresentSkillset from './Details/MyPresentSkillset';
-import WorkingTowards from './Details/WorkingTowards';
-import EducationalQualifications from './Details/EducationalQualifications';
-import ContactInformation from './Details/ContactInformation';
+import BasicInfo from "./Details/BasicInfo";
+import MyPresentSkillset from "./Details/MyPresentSkillset";
+import WorkingTowards from "./Details/WorkingTowards";
+import EducationalQualifications from "./Details/EducationalQualifications";
+import ContactInformation from "./Details/ContactInformation";
 
 const listReset = `
   list-style-type: none;
@@ -64,21 +56,21 @@ const Link = styled(NavLink)`
 function SectionPortal() {
   return (
     <Switch>
-        <Route path='/' exact>
-          <BasicInfo />
-        </Route>
-        <Route path='/present-skillset' exact>
-          <MyPresentSkillset />
-        </Route>
-        <Route path='/what-im-working-towards' exact>
-          <WorkingTowards />
-        </Route>
-        <Route path='/educational-qualifications' exact>
-          <EducationalQualifications />
-        </Route>
-        <Route path='/contact-information' exact>
-          <ContactInformation />
-        </Route>
+      <Route path="/" exact>
+        <BasicInfo />
+      </Route>
+      <Route path="/present-skillset" exact>
+        <MyPresentSkillset />
+      </Route>
+      <Route path="/what-im-working-towards" exact>
+        <WorkingTowards />
+      </Route>
+      <Route path="/educational-qualifications" exact>
+        <EducationalQualifications />
+      </Route>
+      <Route path="/contact-information" exact>
+        <ContactInformation />
+      </Route>
     </Switch>
   );
 }
@@ -90,27 +82,27 @@ function DetailPanel() {
         <DetailNav>
           <DetailNavUl>
             <DetailNavLi>
-              <Link to='/'>
+              <Link to="/">
                 <span>Basic Info about me</span>
               </Link>
             </DetailNavLi>
             <DetailNavLi>
-              <Link to='/present-skillset'>
+              <Link to="/present-skillset">
                 <span>My present skill set</span>
               </Link>
             </DetailNavLi>
             <DetailNavLi>
-              <Link to='/what-im-working-towards'>
-                <span>What I'm working towards</span>
+              <Link to="/what-im-working-towards">
+                <span>What I&apos;m working towards</span>
               </Link>
             </DetailNavLi>
             <DetailNavLi>
-              <Link to='/educational-qualifications'>
-                <span>What I'm working towards</span>
+              <Link to="/educational-qualifications">
+                <span>What I&apos;m working towards</span>
               </Link>
             </DetailNavLi>
             <DetailNavLi>
-              <Link to='/contact-information'>
+              <Link to="/contact-information">
                 <span>Contact Information</span>
               </Link>
             </DetailNavLi>

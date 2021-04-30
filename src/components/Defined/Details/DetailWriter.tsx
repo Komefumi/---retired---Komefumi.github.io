@@ -1,6 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
-import FadeIn from 'react-fade-in';
+import React from "react";
+import styled from "styled-components";
+import FadeIn from "react-fade-in";
 
 const WriterPad = styled.section`
   line-height: 1.5;
@@ -39,7 +39,12 @@ const TitleElem = styled.h4`
   margin: 0em 0 0.25em;
 `;
 
-function DetailWriter({ title, children }) {
+interface DetailWriterProps {
+  title: string;
+  children: React.ReactNode;
+}
+
+function DetailWriter({ title, children }: DetailWriterProps) {
   return (
     <FadeIn>
       <WriterPad>

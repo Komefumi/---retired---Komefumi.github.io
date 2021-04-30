@@ -1,8 +1,7 @@
-import React from 'react';
-import styled from 'styled-components';
-import BannerRectangle from '../../resources/muchlarger.png';
+import styled from "styled-components";
+import BannerRectangle from "../../resources/muchlarger.png";
 
-import Wrapper from '../Wrapper';
+import Wrapper from "../Wrapper";
 
 const LocalWrapper = styled(Wrapper)`
   padding: 1em 2em;
@@ -31,16 +30,6 @@ const Overlay = styled.div`
   min-height: 40vh;
 `;
 
-const cat = `&:after {
-  content: '';
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  width: calc(100% - 4px);
-  height: 50%;
-  background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.2))
-}`
-
 const ProfilePicture = styled.img`
   max-width: 100px;
   margin-top: 2em;
@@ -56,12 +45,16 @@ const Content = styled.div`
 
 function Banner() {
   const justMy = "Just my profile picture on Github";
-  const linkToJustMy = "https://avatars.githubusercontent.com/u/76627194?s=460&v=4";
+  const linkToJustMy =
+    "https://avatars.githubusercontent.com/u/76627194?s=460&v=4";
   return (
     <LocalWrapper>
       <Overlay>
         <Content>
-          <p>Hi, my name is Arjun Raju Pillai and I'm a self taught developer from India.</p>
+          <p>
+            Hi, my name is Arjun Raju Pillai and I&apos;m a self taught
+            developer from India.
+          </p>
 
           <p>This is my present homepage, as of Saturday, 20 February, 2021</p>
 
